@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#183d70" />
+    <meta
+      name="description"
+      content="Search and explore the USAID public records collection in Aidroom."
+    />
+    <title>Aidroom · USAID Files</title>
+    <link rel="stylesheet" href="/assets/style.css" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <script src="/assets/app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip" href="#content">Skip to records</a>
+    <aside class="sidebar" id="sidebar" aria-label="Archive navigation">
+      <a class="brand" href="/" aria-label="Aidroom home"
+        ><span class="brandmark" aria-hidden="true"><i></i><i></i><i></i></span
+        >Aidroom</a
+      >
+      <div class="sidebar-body">
+        <div class="section-label">Workspace</div>
+        <nav id="navigation"></nav>
+        <div class="nav-divider"></div>
+        <button id="collection-info" class="info-link" type="button"></button>
+      </div>
+      <a
+        href="https://www.usaid.gov/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="source-link"
+        ><span class="source-seal" id="source-seal"></span
+        ><span><strong>Official source</strong><small>usaid.gov</small></span
+        ><span id="out-icon"></span
+      ></a>
+    </aside>
+    <button
+      type="button"
+      class="scrim"
+      id="scrim"
+      aria-label="Close navigation"
+    ></button>
+    <div class="workspace">
+      <header class="topbar">
+        <button
+          id="menu"
+          class="icon-button mobile-menu"
+          type="button"
+          aria-label="Open navigation"
+          aria-expanded="false"
+        ></button>
+        <a data-app href="/" class="mobile-brand" aria-label="Aidroom home"
+          >Aidroom</a
+        >
+        <div class="breadcrumb">
+          <span id="bread-icon"></span><span class="bread-home">Workspace</span
+          ><b>/</b><strong id="crumb">Drive</strong>
+        </div>
+        <form id="search-form" role="search" class="search-box">
+          <label id="search-icon" for="search-input"></label
+          ><input
+            type="search"
+            id="search-input"
+            name="q"
+            autocomplete="off"
+            placeholder="Search the archive"
+            aria-label="Search the archive"
+          /><kbd aria-hidden="true">/</kbd>
+        </form>
+      </header>
+      <main id="content" tabindex="-1" aria-label="Archive workspace"></main>
+    </div>
+    <dialog id="info-dialog" aria-labelledby="info-title">
+      <div class="dialog-head">
+        <h2 id="info-title">Collection details</h2>
+        <button
+          class="icon-button"
+          data-close="info-dialog"
+          aria-label="Close collection details"
+          type="button"
+        >
+          ✕
+        </button>
+      </div>
+      <div id="info-body"></div>
+    </dialog>
+    <dialog id="filters-dialog" aria-labelledby="filter-title">
+      <form id="filters-form">
+        <div class="dialog-head">
+          <h2 id="filter-title">Filter records</h2>
+          <button
+            class="icon-button"
+            data-close="filters-dialog"
+            aria-label="Close filters"
+            type="button"
+          >
+            ✕
+          </button>
+        </div>
+        <div id="filter-fields"></div>
+        <div class="dialog-actions">
+          <button id="reset-filters" type="button" class="btn">
+            Clear filters</button
+          ><button class="btn primary" type="submit">Apply filters</button>
+        </div>
+      </form>
+    </dialog>
+    <dialog id="share-dialog" aria-labelledby="share-title">
+      <div class="dialog-head">
+        <h2 id="share-title">Share evidence</h2>
+        <button
+          class="icon-button"
+          data-close="share-dialog"
+          aria-label="Close sharing"
+          type="button"
+        >
+          ✕
+        </button>
+      </div>
+      <div id="share-body"></div>
+    </dialog>
+    <div id="toast" role="status" aria-live="polite" hidden></div>
+  </body>
+</html>
